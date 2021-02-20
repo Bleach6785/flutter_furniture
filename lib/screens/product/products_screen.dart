@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_furniture/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'components/body.dart';
+import '../../constants.dart';
 
 class ProductsScreen extends StatelessWidget {
   @override
@@ -8,6 +10,7 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: buildAppBar(),
+      body: Body(),
     );
   }
 
