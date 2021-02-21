@@ -68,6 +68,22 @@ class ProductCard extends StatelessWidget {
               ),
             ),
           ),
+          // 產品照片
+          Positioned(
+            top: 0.0,
+            right: 0.0,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: kDefaultPadding,
+              ),
+              height: 160.0,
+              width: 200.0,
+              child: Image.asset(
+                "assets/images/Item_1.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ],
       ),
     );
