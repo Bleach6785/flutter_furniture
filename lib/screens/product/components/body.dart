@@ -26,6 +26,26 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
+              Container(
+                margin: EdgeInsets.symmetric(
+                  horizontal: kDefaultPadding,
+                  vertical: kDefaultPadding / 2,
+                ),
+                // color: Colors.blueAccent,
+                height: 160.0,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Container(
+                      height: 136.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(22.0),
+                        color: kBlueColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
