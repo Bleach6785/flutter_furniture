@@ -87,7 +87,7 @@ class ProductCard extends StatelessWidget {
               ),
             ),
           ),
-          // 產品說明
+          // 產品說明與價格
           Positioned(
             bottom: 0.0,
             left: 0.0,
@@ -95,13 +95,33 @@ class ProductCard extends StatelessWidget {
               height: 136.0,
               width: size.width - 200,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Spacer(),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: kDefaultPadding,
                     ),
                     child: Text(
                       "Classic Leather Arm Chair",
+                      style: Theme.of(context).textTheme.button,
+                    ),
+                  ),
+                  Spacer(),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding * 1.5,
+                      vertical: kDefaultPadding / 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(22.0),
+                        topRight: Radius.circular(22.0),
+                      ),
+                    ),
+                    child: Text(
+                      "\$58",
                       style: Theme.of(context).textTheme.button,
                     ),
                   ),
