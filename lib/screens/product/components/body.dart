@@ -7,31 +7,33 @@ import './category_list.dart';
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SearchBox(),
-        CategoryList(),
-        SizedBox(
-          height: kDefaultPadding / 2,
-        ),
-        Expanded(
-          child: Stack(
-            children: [
-              Container(
-                margin: EdgeInsets.only(top: 70.0),
-                decoration: BoxDecoration(
-                  color: kBackgroundColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40.0),
-                    topRight: Radius.circular(40.0),
+    return SafeArea(
+      child: Column(
+        children: [
+          SearchBox(),
+          CategoryList(),
+          SizedBox(
+            height: kDefaultPadding / 2,
+          ),
+          Expanded(
+            child: Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 70.0),
+                  decoration: BoxDecoration(
+                    color: kBackgroundColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40.0),
+                      topRight: Radius.circular(40.0),
+                    ),
                   ),
                 ),
-              ),
-              ProductCard(),
-            ],
+                ProductCard(),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -43,6 +45,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
@@ -81,6 +84,28 @@ class ProductCard extends StatelessWidget {
               child: Image.asset(
                 "assets/images/Item_1.png",
                 fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          // 產品說明
+          Positioned(
+            bottom: 0.0,
+            left: 0.0,
+            child: SizedBox(
+              height: 136.0,
+              width: size.width - 200,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding,
+                    ),
+                    child: Text(
+                      "Classic Leather Arm Chair",
+                      style: Theme.of(context).textTheme.button,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
