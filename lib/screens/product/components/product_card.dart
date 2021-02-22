@@ -26,11 +26,13 @@ class ProductCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
+          // 產品項目卡片(包含2層顏色)
           Container(
             height: 136.0,
+            // 底層
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(22.0),
-              color: kBlueColor,
+              color: itemIndex.isEven ? kBlueColor : kSecondaryColor,
               boxShadow: [kDefaultShadow],
             ),
             child: Container(
