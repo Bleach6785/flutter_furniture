@@ -4,6 +4,7 @@ import '../../../constants.dart';
 import '../components/product_image.dart';
 import '../components/list_of_colors.dart';
 import '../../../models/product.dart';
+import '../components/chat_and_add_to_cart.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -35,9 +36,12 @@ class Body extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: ProductPoster(
-                      size: size,
-                      image: product.image,
+                    child: Hero(
+                      tag: '${product.id}',
+                      child: ProductPoster(
+                        size: size,
+                        image: product.image,
+                      ),
                     ),
                   ),
                   ListOfColors(),
@@ -73,6 +77,7 @@ class Body extends StatelessWidget {
                 ],
               ),
             ),
+            ChatAndAddToCart(),
           ],
         ),
       ),
