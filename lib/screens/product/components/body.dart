@@ -4,6 +4,7 @@ import '../../../components/search_box.dart';
 import '../../../constants.dart';
 import './category_list.dart';
 import '../../../screens/product/components/product_card.dart';
+import '../../../models/product.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -30,8 +31,11 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 ListView.builder(
-                  itemCount: 3,
-                  itemBuilder: (context, index) => ProductCard(),
+                  itemCount: products.length,
+                  itemBuilder: (context, index) => ProductCard(
+                    itemIndex: index,
+                    product: products[index],
+                  ),
                 ),
               ],
             ),

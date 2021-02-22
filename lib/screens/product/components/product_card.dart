@@ -52,7 +52,7 @@ class ProductCard extends StatelessWidget {
               height: 160.0,
               width: 200.0,
               child: Image.asset(
-                "assets/images/Item_1.png",
+                product.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -73,7 +73,7 @@ class ProductCard extends StatelessWidget {
                       horizontal: kDefaultPadding,
                     ),
                     child: Text(
-                      "Classic Leather Arm Chair",
+                      product.title,
                       style: Theme.of(context).textTheme.button,
                     ),
                   ),
@@ -91,7 +91,7 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      "\$58",
+                      "\$${product.price}",
                       style: Theme.of(context).textTheme.button,
                     ),
                   ),
