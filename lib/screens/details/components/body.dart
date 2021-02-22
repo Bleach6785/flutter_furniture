@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../components/product_image.dart';
+import '../components/color_dots.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -23,29 +25,27 @@ class Body extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Container(
-                margin: EdgeInsets.symmetric(
+              ProductPoster(
+                size: size,
+                image: "assets/images/Item_2.png",
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
                   vertical: kDefaultPadding,
                 ),
-                height: size.width * 0.8,
-                // color: Colors.black,
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: size.width * 0.75,
-                      width: size.width * 0.75,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
+                    ColorDot(
+                      fillColor: Color(0XFF80989A),
+                      isSelected: true,
                     ),
-                    Image.asset(
-                      "assets/images/Item_2.png",
-                      height: size.width * 0.7,
-                      width: size.width * 0.7,
-                      fit: BoxFit.cover,
-                    )
+                    ColorDot(
+                      fillColor: Color(0XFFFF5200),
+                    ),
+                    ColorDot(
+                      fillColor: kPrimaryColor,
+                    ),
                   ],
                 ),
               ),
