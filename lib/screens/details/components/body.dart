@@ -30,15 +30,22 @@ class Body extends StatelessWidget {
                 height: size.width * 0.8,
                 // color: Colors.black,
                 child: Stack(
+                  alignment: Alignment.bottomCenter,
                   children: [
                     Container(
-                      height: size.width * 0.7,
-                      width: size.width * 0.7,
+                      height: size.width * 0.75,
+                      width: size.width * 0.75,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                     ),
+                    Image.asset(
+                      "assets/images/Item_2.png",
+                      height: size.width * 0.7,
+                      width: size.width * 0.7,
+                      fit: BoxFit.cover,
+                    )
                   ],
                 ),
               ),
