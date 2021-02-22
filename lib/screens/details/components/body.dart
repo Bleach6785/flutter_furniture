@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
-import '../components/product_image.dart';
-import '../components/list_of_colors.dart';
 import '../../../models/product.dart';
-import '../components/chat_and_add_to_cart.dart';
+import 'product_image.dart';
+import 'list_of_colors.dart';
+import 'chat_and_add_to_cart.dart';
 
 class Body extends StatelessWidget {
   final Product product;

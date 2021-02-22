@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../components/search_box.dart';
 import '../../../constants.dart';
-import './category_list.dart';
 import '../../../screens/product/components/product_card.dart';
 import '../../../models/product.dart';
 import '../../../screens/details/details_screen.dart';
+import 'category_list.dart';
 
 class Body extends StatelessWidget {
   @override
