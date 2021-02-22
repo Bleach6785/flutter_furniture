@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants.dart';
+import 'components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override
@@ -9,6 +10,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: buildAppBar(context),
+      body: Body(),
     );
   }
 
