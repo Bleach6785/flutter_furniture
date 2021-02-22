@@ -3,14 +3,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constants.dart';
 import 'components/body.dart';
+import '../../models/product.dart';
 
 class DetailsScreen extends StatelessWidget {
+  final Product product;
+
+  const DetailsScreen({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Body(
+        product: product,
+      ),
     );
   }
 

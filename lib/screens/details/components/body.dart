@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 import '../components/product_image.dart';
-import '../components/color_dots.dart';
+import '../components/list_of_colors.dart';
+import '../../../models/product.dart';
 
 class Body extends StatelessWidget {
+  final Product product;
+
+  const Body({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: double.infinity,
@@ -24,30 +29,43 @@ class Body extends StatelessWidget {
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ProductPoster(
-                size: size,
-                image: "assets/images/Item_2.png",
+              Center(
+                child: ProductPoster(
+                  size: size,
+                  image: product.image,
+                ),
               ),
+              ListOfColors(),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  vertical: kDefaultPadding,
+                  vertical: kDefaultPadding / 2,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ColorDot(
-                      fillColor: Color(0XFF80989A),
-                      isSelected: true,
-                    ),
-                    ColorDot(
-                      fillColor: Color(0XFFFF5200),
-                    ),
-                    ColorDot(
-                      fillColor: kPrimaryColor,
-                    ),
-                  ],
+                child: Text(
+                  product.title,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
+              ),
+              Text(
+                '\$${product.price}',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                  color: kSecondaryColor,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: kDefaultPadding / 2,
+                ),
+                child: Text(
+                  product.description,
+                  style: TextStyle(color: kTextLightColor),
+                ),
+              ),
+              SizedBox(
+                height: kDefaultPadding,
               ),
             ],
           ),
