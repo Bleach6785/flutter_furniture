@@ -7,7 +7,8 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     Key key,
     this.itemIndex,
-    this.product, this.press,
+    this.product,
+    this.press,
   }) : super(key: key);
 
   final int itemIndex;
@@ -50,15 +51,18 @@ class ProductCard extends StatelessWidget {
             Positioned(
               top: 0.0,
               right: 0.0,
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding,
-                ),
-                height: 160.0,
-                width: 200.0,
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.cover,
+              child: Hero(
+                tag: '${product.id}',
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: kDefaultPadding,
+                  ),
+                  height: 160.0,
+                  width: 200.0,
+                  child: Image.asset(
+                    product.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
